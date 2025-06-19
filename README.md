@@ -48,3 +48,21 @@ Text:
 - Concatenation: combine multiple text fields into one string:
 - TF-IDF Vectorization: maximum of 3000 features, english stop words removal (“the”, “is” and “and”)
 
+## Unimodal models designed:
+Text:
+- BioMedBERT
+- SVM
+- Random Forest
+- Logistic Regression
+
+Image:
+- ResNet50
+- DenseNet121
+- EfficientNet-B0
+
+## Multi-modal models designed:
+- EfficientNet+TF-IDF Vectorizer(Intermediate Fusion with Cross-Modal Attention)
+- EfficientNet+BiomedBert (Weighted Late Fusion)
+- EfficientNet+BiomedBert (Average Late Fusion)
+- EfficientNet+Random Forest(Averaging Late Fusion)
+- EfficientNet+Random Forest(Averaging Late Fusion) Without Miscellaneous
