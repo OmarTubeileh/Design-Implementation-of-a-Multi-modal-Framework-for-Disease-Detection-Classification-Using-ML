@@ -9,7 +9,7 @@ configuration—EfficientNet combined with Random Forest using weighted averagin
 the potential of multi-modal learning in advancing AI-driven diagnostic systems.
 
 ## Text augmentation
-The following are the 3 techniques that were employed to balance the classes:
+The following are the three techniques that were employed to balance the classes:
 - Synonym Replacements: The first text technique used was Synonym replacement, where we changed words with their synonyms to provide some balance to the dataset. Some
 libraries, such as TextAttack and NLPAug, were used but didn't offer promising results as they changed the meaning behind the sentences drastically. Instead, we manually picked
 widely used words and phrases found in the dataset and mapped them to their corresponding synonym to perform the balancing. Words such as "pain" were replaced
@@ -21,4 +21,19 @@ structure of it was changed.
 - Back Translation: This is a data augmentation technique used to improve diversity. This involved translating the text into French and then translating it back to English. This offered
 a different variance of the original text while maintaining the medical meaning behind it. "Googletrans" was used, which is a Python library that provides an interface to the Google
 Translate API.
+
+## Image Augmentations:
+The following are the two techniques that were implemented to balance the data:
+- Contrast Adjustment: The first image augmentation is implemented using the PIL.ImageEnhance module. It increases the image's contrast by a factor of 1.5 (50%),
+making dark areas darker and bright areas brighter. This is particularly useful for enhancing the visibility of subtle features in medical images, making certain visual features more
+prominent, where differences in tissue density or pathology can be highlighted with better contrast. Applying contrast variation during training improves the model's robustness to
+images captured under varying lighting conditions or device settings, ensuring it doesn't overly rely on consistent illumination to make predictions.
+- Grid Distortion: it is applied using albumentations' GridDistortion class. This method divides the image into a grid and applies random distortions to each section, simulating
+non-linear warping. Such distortions mimic real-world imaging artifacts, patient movement, or tissue deformations, encouraging the model to generalize better to spatially
+inconsistent inputs. By introducing controlled geometric variability, this augmentation helps the model become less sensitive to exact spatial arrangements, promoting a focus on
+structural patterns rather than precise pixel locations.
+
+The following transformations were implemented to increase the number of records:
+- Clockwise rotation: Images were rotated 30 degrees to the right.
+- Anti-clockwise rotation: Images were rotated 30 degrees to the left
 
