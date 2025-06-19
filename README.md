@@ -23,7 +23,7 @@ a different variance of the original text while maintaining the medical meaning 
 Translate API.
 
 ## Image Augmentations:
-The following are the two techniques that were implemented to balance the data:
+The following are the two techniques that were employed to balance the classes further more:
 - Contrast Adjustment: The first image augmentation is implemented using the PIL.ImageEnhance module. It increases the image's contrast by a factor of 1.5 (50%),
 making dark areas darker and bright areas brighter. This is particularly useful for enhancing the visibility of subtle features in medical images, making certain visual features more
 prominent, where differences in tissue density or pathology can be highlighted with better contrast. Applying contrast variation during training improves the model's robustness to
@@ -36,4 +36,15 @@ structural patterns rather than precise pixel locations.
 The following transformations were implemented to increase the number of records:
 - Clockwise rotation: Images were rotated 30 degrees to the right.
 - Anti-clockwise rotation: Images were rotated 30 degrees to the left
+
+## Data Preprocessing
+Images:
+- Convert to RGB 3-channel tensors of shape [3, H, W]
+- Resize to 224x224 pixels
+- Normalizing pixel values from 0-255 to 0–1
+
+Text:
+- Cleaning: missing fields are converted to empty strings Unicode escape characters removed
+- Concatenation: combine multiple text fields into one string:
+- TF-IDF Vectorization: maximum of 3000 features, english stop words removal (“the”, “is” and “and”)
 
