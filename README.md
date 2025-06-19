@@ -1,4 +1,4 @@
-# Design-Implementation-of-a-Multi-modal-Framework-for-Disease-Detection-Classification-Using-ML
+# Design and Implementation of a Multi-modal Framework for Disease Detection and Classification Using ML
 
 This project presents the design and implementation of a multi-modal machine learning framework to improve disease detection and classification by integrating medical imaging and
 clinical text data. The proposed framework employs deep learning models—ResNet50, DenseNet121, and EfficientNet—for analyzing CT and MRI scans, alongside language models
