@@ -66,3 +66,13 @@ Image:
 - EfficientNet+BiomedBert (Average Late Fusion)
 - EfficientNet+Random Forest(Averaging Late Fusion)
 - EfficientNet+Random Forest(Averaging Late Fusion) Without Miscellaneous
+- Resnet50+DistilBert
+
+## Web Application
+To make the diagnostic system accessible and interactive, a web application was developed and deployed. The application integrates three underlying models to support flexible input options:
+a Random Forest model for text-only inputs, an EfficientNet model for image-only inputs, and a late fusion model combining both modalities when text and image are provided together. This
+dynamic model selection ensures that the system remains functional and accurate regardless of the type of input received from the user.
+
+The backend was built using Flask and deployed on Render, handling all inference logic and model orchestration. The frontend was developed with React and TypeScript, providing a
+responsive and user-friendly interface, and is hosted on Vercel. This modular design allows seamless communication between the frontend and backend, enabling real-time predictions and a
+smooth user experience. The deployed application serves as a practical demonstration of the proposed multimodal diagnostic framework and its adaptability to real-world clinical scenarios.
